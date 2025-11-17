@@ -1,92 +1,64 @@
----
-
 # Contributing to vmware-automation
 
-Thanks for your interest in contributing! 🎉
-This repository is meant to be a practical toolbox for VMware automation engineers and architects.
-
----
+Thank you for your interest in contributing!  
+This repository is meant to help VMware automation engineers and architects share production-grade scripts.
 
 ## How to Contribute
 
-1. **Fork** the repository.
+### 1. Fork the repository
+Click **Fork** at the top right.
 
-2. Create a new **branch** for your change:
+### 2. Clone your fork
 
-   ```bash
-   git checkout -b feature/my-new-script
-   ```
+```bash
+git clone https://github.com/<your-username>/vmware-automation.git
+```
 
-3. **Add or update**:
+### 3. Create a feature branch
 
-   * Scripts under the appropriate `powershell/` or `python/` folder.
-   * A short README in that folder describing:
+```bash
+git checkout -b feature/new-script
+```
 
-     * What it does
-     * Inputs/parameters
-     * Example usage
+### 4. Add your scripts
 
-4. Run any tests or validation that make sense for your change.
+Place PowerShell scripts under:
+```text
+powershell/<category>/
+```
 
-5. **Commit and push your changes**:
+Place Python scripts under:
+```text
+python/<category>/
+```
 
-   ```bash
-   git commit -m "Add <short-description>"
-   git push origin feature/my-new-script
-   ```
+### 5. Follow naming standards
+- Use descriptive names  
+- Include comment-based help (PowerShell)  
+- Include docstrings (Python)  
+- Add examples whenever possible  
 
-6. **Open a Pull Request** against `main`.
+### 6. Submit a Pull Request
 
----
+Describe:
+- Purpose  
+- Requirements  
+- What problem the script solves  
 
-## Coding Guidelines
+We will review and merge.
+
+## Code Style
 
 ### PowerShell
-
-* Use descriptive function names (Verb-Noun style where possible).
-* Include comment-based help (`.SYNOPSIS`, `.DESCRIPTION`, `.EXAMPLE`).
-* Prefer advanced functions and typed parameters.
-* Validate code with:
-
-  * **PSScriptAnalyzer** for style and best practices.
-* Avoid hardcoding credentials or secrets.
+- Follow PowerShell best practices  
+- Use comment-based help  
+- Include `try/catch` error handling  
 
 ### Python
+- Use functions, not long scripts  
+- Follow PEP8 formatting  
+- Include docstrings  
 
-* Follow **PEP 8** style guidelines.
-* Use virtual environments for dependencies.
-* Include a `requirements.txt` or `pyproject.toml` where needed.
-* Add docstrings for public functions and classes.
+## Thank You!
 
----
-
-## Script Expectations
-
-Scripts should be **idempotent** where possible (safe to run multiple times).
-
-Include:
-
-* Clear logging/output (e.g., what action is happening, target vCenter/vROps, etc.)
-* Error handling and meaningful messages.
-
-Avoid:
-
-* Embedding production credentials.
-* Including environment-specific secrets or private endpoints.
-
----
-
-## Reporting Issues
-
-If you find a bug:
-
-1. Search existing issues first.
-2. Open a new issue with:
-
-   * Description of the problem
-   * Steps to reproduce
-   * Environment details (vSphere/vROps version, OS, PowerShell/Python version)
-
-For security-related issues, please follow the process in **SECURITY.md**.
-
----
+Your contributions make the VMware automation community stronger.
